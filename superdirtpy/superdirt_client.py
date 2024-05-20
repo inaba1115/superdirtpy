@@ -30,7 +30,9 @@ class SuperDirtClient:
 
     ADDRESS: str = "/dirt/play"
 
-    def __init__(self, address: str = "127.0.0.1", port: int = 57120, delay: float = 1.0) -> None:
+    def __init__(
+        self, address: str = "127.0.0.1", port: int = 57120, delay: float = 1.0
+    ) -> None:
         """Initialize SuperDirtClient.
 
         Args:
@@ -52,4 +54,8 @@ class SuperDirtClient:
         if dryrun:
             return
         logger.debug(event)
-        self.__client.send(address=self.ADDRESS, args=event, timestamp=timestamp.timestamp() + self.__delay)
+        self.__client.send(
+            address=self.ADDRESS,
+            args=event,
+            timestamp=timestamp.timestamp() + self.__delay,
+        )

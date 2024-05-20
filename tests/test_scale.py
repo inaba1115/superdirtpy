@@ -15,4 +15,6 @@ class TestScale(unittest.TestCase):
         self.assertEqual(scale.bind(degrees=degrees, octave=5), [60, None, 60])
 
         degrees = [[0, 1, 2], [1, 2, 3]]
-        self.assertEqual(scale.bind(degrees=degrees, octave=5), [[60, 63, 65], [63, 65, 67]])
+        self.assertEqual(
+            scale.bind(degrees=degrees, octave=5), [[60, 63, 65], [63, 65, 67]]
+        )

@@ -21,5 +21,6 @@ class TestEvent(unittest.TestCase):
     def test_make_events_chord(self):
         params = {"s": "piano", "n": [0, 1], "delta": 1}
         self.assertEqual(
-            Event.make_events(params), [{"s": "piano", "n": 0, "delta": 1}, {"s": "piano", "n": 1, "delta": 1}]
+            Event.make_events(params),
+            [{"s": "piano", "n": 0, "delta": 1}, {"s": "piano", "n": 1, "delta": 1}],
         )

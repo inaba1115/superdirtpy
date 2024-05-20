@@ -31,7 +31,9 @@ def main():
     params = {
         "s": s,
         "midichan": midichan,
-        "n": sd.Scale(sd.PitchClass.D, sd.Scales.messiaen3).bind(rng.integers(-5, 15, 12).tolist()),
+        "n": sd.Scale(sd.PitchClass.D, sd.Scales.messiaen3).bind(
+            rng.integers(-5, 15, 12).tolist()
+        ),
         "delta": [0.5, 0.3],
         "amp": 0.6,
     }
@@ -40,7 +42,9 @@ def main():
     params = {
         "s": s,
         "midichan": midichan,
-        "n": sd.Scale(sd.PitchClass.A, sd.Scales.messiaen3).bind(rng.integers(-5, 15, 20).tolist()),
+        "n": sd.Scale(sd.PitchClass.A, sd.Scales.messiaen3).bind(
+            rng.integers(-5, 15, 20).tolist()
+        ),
         "delta": 0.1,
         "amp": 0.5,
         "octave": 6,

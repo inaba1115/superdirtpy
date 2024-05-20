@@ -33,7 +33,9 @@ class Pattern:
             params_list.append(params3)
         return params_list
 
-    def __make_events_list(self, params_list: list[dict]) -> list[tuple[timedelta, list[dict]]]:
+    def __make_events_list(
+        self, params_list: list[dict]
+    ) -> list[tuple[timedelta, list[dict]]]:
         events_list = []
         for params in params_list:
             delta = timedelta(seconds=params[Params.delta])
@@ -52,7 +54,9 @@ class Event:
     @classmethod
     def validate(cls, params: dict) -> None:
         if Params.s not in params and Params.sound not in params:
-            raise ValueError(f"{Params.s} or {Params.sound} is required, params={params}")
+            raise ValueError(
+                f"{Params.s} or {Params.sound} is required, params={params}"
+            )
         if Params.delta not in params:
             raise ValueError(f"{Params.delta} is required, params={params}")
 

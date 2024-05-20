@@ -33,7 +33,9 @@ class PatternTransformer(Transformer):
         return str(s)
 
 
-pattern_parser = Lark(pattern_grammer, parser="lalr", start="pattern", transformer=PatternTransformer())
+pattern_parser = Lark(
+    pattern_grammer, parser="lalr", start="pattern", transformer=PatternTransformer()
+)
 
 
 def make_sound_delta(pattern: list, sec: float) -> tuple[list[str], list[float]]:
