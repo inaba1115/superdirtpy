@@ -21,13 +21,34 @@ class OscClient:
 
 
 class SuperDirtClient:
+    """Client for SuperDirt.
+
+    Attributes:
+        client: osc client
+        delay: delay sec for osc bundle timestamp
+    """
+
     ADDRESS: str = "/dirt/play"
 
     def __init__(self, address: str = "127.0.0.1", port: int = 57120, delay: float = 1.0) -> None:
+        """Initialize SuperDirtClient.
+
+        Args:
+            address: superdirt address
+            port: superdirt address
+            delay: delay sec for osc bundle timestamp
+        """
         self.__client = OscClient(address, port)
         self.__delay = delay
 
     def send(self, event: dict, timestamp: datetime, dryrun: bool = False) -> None:
+        """Sends event to SuperDirt.
+
+        Args:
+            event: dict represents event
+            timestamp: osc bundle timestamp
+            dryrun: skip or not
+        """
         if dryrun:
             return
         logger.debug(event)
