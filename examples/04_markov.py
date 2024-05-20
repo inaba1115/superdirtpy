@@ -10,7 +10,12 @@ client = sd.SuperDirtClient()
 
 
 class Markov:
-    def __init__(self, xs: list[typing.Any], matrix: list[list[int]], rng: np.random.Generator | None = None) -> None:
+    def __init__(
+        self,
+        xs: list[typing.Any],
+        matrix: list[list[int]],
+        rng: np.random.Generator | None = None,
+    ) -> None:
         self.xs = xs
         self.matrix = self.__prepare(matrix)
         self.rng = np.random.default_rng(rng)

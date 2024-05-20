@@ -21,8 +21,6 @@ class PitchClass(IntEnum):
 class Note:
     def __init__(self, pc: PitchClass, octave: int) -> None:
         midi_number = self.__to_midi_number(pc, octave)
-        if midi_number < 0 or 127 < midi_number:
-            raise ValueError(f"{midi_number} out of range")
 
         self.pc = pc
         self.octave = octave
