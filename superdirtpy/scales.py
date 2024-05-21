@@ -1,7 +1,6 @@
 class Scales:
-    """Dictionary of scales.
-
-    Ref: https://github.com/tidalcycles/Tidal/blob/dev/src/Sound/Tidal/Scales.hs
+    """
+    ref: https://github.com/tidalcycles/Tidal/blob/dev/src/Sound/Tidal/Scales.hs
     """
 
     # Five notes scales
