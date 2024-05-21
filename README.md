@@ -7,7 +7,7 @@ superdirtpy is a client library for Super Dirt written in python.
 - can be used for algorithmic composition, live coding, integration with python libraries such as numpy and scipy and developing tools for your own use.
 
 ## prerequisite
-Install Tidal Cycles. Especially Super Dirt.
+Install Tidal Cycles. Especially Super Dirt.  
 https://tidalcycles.org/
 
 ## examples
@@ -48,8 +48,7 @@ if __name__ == "__main__":
     except KeyboardInterrupt:
         pass
 ```
-See more [examples](./examples/)
+See more [examples](./examples/).
 
 ## parameters
-This library internally handles only `s`, `sound`, `n`, and `delta`, but you can also use parameters such as `amp` and `room`.
-See [source](./superdirtpy/params.py)
+This library internally handles only `s`, `sound`, `n`, and `delta`, but you can also use parameters such as `amp` and `room`. ([source](./superdirtpy/params.py))
