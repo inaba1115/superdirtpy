@@ -10,7 +10,7 @@ import superdirtpy as sd
 client = sd.SuperDirtClient()
 
 
-def thread_style():
+def main():
     tctx = sd.TemporalContext()
     now = tctx.now()
 
@@ -42,6 +42,6 @@ def thread_style():
 if __name__ == "__main__":
     try:
         logging.basicConfig(level=logging.DEBUG)
-        thread_style()
+        main()
     except KeyboardInterrupt:
         pass
