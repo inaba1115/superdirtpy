@@ -1,7 +1,6 @@
 class Chords:
-    """Dictionary of chords.
-
-    Ref: https://github.com/tidalcycles/Tidal/blob/dev/src/Sound/Tidal/Chords.hs
+    """
+    ref: https://github.com/tidalcycles/Tidal/blob/dev/src/Sound/Tidal/Chords.hs
     """
 
     # Major chords
