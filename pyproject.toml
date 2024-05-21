@@ -1,9 +1,11 @@
 [tool.poetry]
 name = "superdirtpy"
 version = "0.1.0"
-description = ""
+description = "superdirtpy is a client library for Super Dirt written in python."
 authors = ["inaba1115 <inaba1115@gmail.com>"]
 readme = "README.md"
+homepage = "https://github.com/inaba1115"
+repository = "https://github.com/inaba1115/superdirtpy"
 
 [tool.poetry.dependencies]
 python = "^3.12"
