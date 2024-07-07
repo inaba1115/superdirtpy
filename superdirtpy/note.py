@@ -19,17 +19,11 @@ class PitchClass(IntEnum):
     B = 11
 
     @classmethod
-    def random(cls, with_name: bool = True) -> tuple[str, PitchClass] | PitchClass:
+    def random(cls) -> tuple[str, PitchClass]:
         pitch_classes = []
         for k, v in cls.__members__.items():
             pitch_classes.append((k, v))
-
-        pitch_class = random.choice(pitch_classes)
-
-        if with_name:
-            return pitch_class
-        else:
-            return pitch_class[1]
+        return random.choice(pitch_classes)
 
 
 class Note:

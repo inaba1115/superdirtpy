@@ -104,7 +104,7 @@ class Scales:
     chromatic = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
 
     @classmethod
-    def random(cls, with_name: bool = True) -> tuple[str, list[int]] | list[int]:
+    def random(cls) -> tuple[str, list[int]]:
         scales = [
             ("min_pent", Scales.min_pent),
             ("maj_pent", Scales.maj_pent),
@@ -174,10 +174,4 @@ class Scales:
             ("messiaen7", Scales.messiaen7),
             ("chromatic", Scales.chromatic),
         ]
-
-        scale = random.choice(scales)
-
-        if with_name:
-            return scale
-        else:
-            return scale[1]
+        return random.choice(scales)

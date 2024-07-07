@@ -9,4 +9,3 @@ class TestScales(unittest.TestCase):
 
     def test_random(self):
         _, _ = Scales.random()
-        _ = Scales.random(with_name=False)
