@@ -1,3 +1,6 @@
+import random
+
+
 class Scales:
     """
     ref: https://github.com/tidalcycles/Tidal/blob/dev/src/Sound/Tidal/Scales.hs
@@ -78,7 +81,7 @@ class Scales:
     enigmatic = [0, 1, 4, 6, 8, 10, 11]
     spanish = [0, 1, 4, 5, 7, 8, 10]
 
-    # Modes of whole tones with added note ->
+    # Modes of whole tones with added note
     leading_whole = [0, 2, 4, 6, 8, 10, 11]
     lydian_minor = [0, 2, 4, 6, 7, 8, 10]
     neapolitan_major = [0, 1, 3, 5, 7, 9, 11]
@@ -97,13 +100,84 @@ class Scales:
     messiaen6 = [0, 2, 4, 5, 6, 8, 10, 11]
     messiaen7 = [0, 1, 2, 3, 5, 6, 7, 8, 9, 11]
 
-    # Arabic maqams taken from SuperCollider's Scale.sc
-    bayati = [0, 1.5, 3, 5, 7, 8, 10]
-    hijaz = [0, 1, 4, 5, 7, 8.5, 10]
-    sikah = [0, 1.5, 3.5, 5.5, 7, 8.5, 10.5]
-    rast = [0, 2, 3.5, 5, 7, 9, 10.5]
-    iraq = [0, 1.5, 3.5, 5, 6.5, 8.5, 10.5]
-    saba = [0, 1.5, 3, 4, 6, 8, 10]
-
     # 12 note scales
     chromatic = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+
+    @classmethod
+    def random(cls, with_name: bool = True) -> tuple[str, list[int]] | list[int]:
+        scales = [
+            ("min_pent", Scales.min_pent),
+            ("maj_pent", Scales.maj_pent),
+            ("ritusen", Scales.ritusen),
+            ("egyptian", Scales.egyptian),
+            ("kumai", Scales.kumai),
+            ("hirajoshi", Scales.hirajoshi),
+            ("iwato", Scales.iwato),
+            ("chinese", Scales.chinese),
+            ("indian", Scales.indian),
+            ("pelog", Scales.pelog),
+            ("prometheus", Scales.prometheus),
+            ("scriabin", Scales.scriabin),
+            ("gong", Scales.gong),
+            ("shang", Scales.shang),
+            ("jiao", Scales.jiao),
+            ("zhi", Scales.zhi),
+            ("yu", Scales.yu),
+            ("whole", Scales.whole),
+            ("augmented", Scales.augmented),
+            ("augmented2", Scales.augmented2),
+            ("hex_major7", Scales.hex_major7),
+            ("hex_dorian", Scales.hex_dorian),
+            ("hex_phrygian", Scales.hex_phrygian),
+            ("hex_sus", Scales.hex_sus),
+            ("hex_major6", Scales.hex_major6),
+            ("hex_aeolian", Scales.hex_aeolian),
+            ("major", Scales.major),
+            ("ionian", Scales.ionian),
+            ("dorian", Scales.dorian),
+            ("phrygian", Scales.phrygian),
+            ("lydian", Scales.lydian),
+            ("mixolydian", Scales.mixolydian),
+            ("aeolian", Scales.aeolian),
+            ("minor", Scales.minor),
+            ("locrian", Scales.locrian),
+            ("harmonic_minor", Scales.harmonic_minor),
+            ("harmonic_major", Scales.harmonic_major),
+            ("melodic_minor", Scales.melodic_minor),
+            ("melodic_minor_desc", Scales.melodic_minor_desc),
+            ("melodic_major", Scales.melodic_major),
+            ("bartok", Scales.bartok),
+            ("hindu", Scales.hindu),
+            ("todi", Scales.todi),
+            ("purvi", Scales.purvi),
+            ("marva", Scales.marva),
+            ("bhairav", Scales.bhairav),
+            ("ahirbhairav", Scales.ahirbhairav),
+            ("super_locrian", Scales.super_locrian),
+            ("romanian_minor", Scales.romanian_minor),
+            ("hungarian_minor", Scales.hungarian_minor),
+            ("neapolitan_minor", Scales.neapolitan_minor),
+            ("enigmatic", Scales.enigmatic),
+            ("spanish", Scales.spanish),
+            ("leading_whole", Scales.leading_whole),
+            ("lydian_minor", Scales.lydian_minor),
+            ("neapolitan_major", Scales.neapolitan_major),
+            ("locrian_major", Scales.locrian_major),
+            ("diminished", Scales.diminished),
+            ("diminished2", Scales.diminished2),
+            ("messiaen1", Scales.messiaen1),
+            ("messiaen2", Scales.messiaen2),
+            ("messiaen3", Scales.messiaen3),
+            ("messiaen4", Scales.messiaen4),
+            ("messiaen5", Scales.messiaen5),
+            ("messiaen6", Scales.messiaen6),
+            ("messiaen7", Scales.messiaen7),
+            ("chromatic", Scales.chromatic),
+        ]
+
+        scale = random.choice(scales)
+
+        if with_name:
+            return scale
+        else:
+            return scale[1]
