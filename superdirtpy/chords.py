@@ -67,7 +67,7 @@ class Chords:
     minor11sharp = [0, 3, 7, 10, 14, 18]
 
     @classmethod
-    def random(cls, with_name: bool = True) -> tuple[str, list[int]] | list[int]:
+    def random(cls) -> tuple[str, list[int]]:
         chords = [
             ("major", Chords.major),
             ("aug", Chords.aug),
@@ -120,10 +120,4 @@ class Chords:
             ("eleven_sharp", Chords.eleven_sharp),
             ("minor11sharp", Chords.minor11sharp),
         ]
-
-        chord = random.choice(chords)
-
-        if with_name:
-            return chord
-        else:
-            return chord[1]
+        return random.choice(chords)

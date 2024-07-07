@@ -6,7 +6,6 @@ from superdirtpy.note import Note, PitchClass
 class TestPitchClass(unittest.TestCase):
     def test_random(self):
         _, _ = PitchClass.random()
-        _ = PitchClass.random(with_name=False)
 
 
 class TestNote(unittest.TestCase):

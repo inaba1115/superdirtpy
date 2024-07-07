@@ -9,4 +9,3 @@ class TestChords(unittest.TestCase):
 
     def test_random(self):
         _, _ = Chords.random()
-        _ = Chords.random(with_name=False)
