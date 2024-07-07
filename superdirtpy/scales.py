@@ -78,7 +78,7 @@ class Scales:
     enigmatic = [0, 1, 4, 6, 8, 10, 11]
     spanish = [0, 1, 4, 5, 7, 8, 10]
 
-    # Modes of whole tones with added note ->
+    # Modes of whole tones with added note
     leading_whole = [0, 2, 4, 6, 8, 10, 11]
     lydian_minor = [0, 2, 4, 6, 7, 8, 10]
     neapolitan_major = [0, 1, 3, 5, 7, 9, 11]
@@ -96,14 +96,6 @@ class Scales:
     messiaen5 = [0, 1, 5, 6, 7, 11]
     messiaen6 = [0, 2, 4, 5, 6, 8, 10, 11]
     messiaen7 = [0, 1, 2, 3, 5, 6, 7, 8, 9, 11]
-
-    # Arabic maqams taken from SuperCollider's Scale.sc
-    bayati = [0, 1.5, 3, 5, 7, 8, 10]
-    hijaz = [0, 1, 4, 5, 7, 8.5, 10]
-    sikah = [0, 1.5, 3.5, 5.5, 7, 8.5, 10.5]
-    rast = [0, 2, 3.5, 5, 7, 9, 10.5]
-    iraq = [0, 1.5, 3.5, 5, 6.5, 8.5, 10.5]
-    saba = [0, 1.5, 3, 4, 6, 8, 10]
 
     # 12 note scales
     chromatic = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
