@@ -1,3 +1,5 @@
+import typing
+
 from .note import Note, PitchClass
 from .scales import Scales
 
@@ -13,8 +15,8 @@ class Scale:
         note = Note(self.root, octave).transpose(self.scale[degree])
         return note
 
-    def bind(self, degrees: list[int], octave: int = 0) -> list[int]:
-        ret = []
+    def bind(self, degrees: list[typing.Any], octave: int = 0) -> list[typing.Any]:
+        ret: list[typing.Any] = []
         for degree in degrees:
             if degree is None:
                 # rest note
