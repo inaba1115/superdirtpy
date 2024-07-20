@@ -80,7 +80,7 @@ def player():
         if pattern_cache != "":
             if pattern_updated:
                 pattern = pattern_parser.parse(pattern_cache)
-                sound, delta = make_sound_delta(pattern, sec_per_cycle)
+                sound, delta = make_sound_delta(pattern, sec_per_cycle)  # type: ignore
                 pattern_updated = False
 
             params = {
