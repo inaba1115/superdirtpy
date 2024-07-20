@@ -15,6 +15,9 @@ class TemporalContext:
     def now(self) -> datetime:
         return self.__vtime
 
+    def set_now(self, now: datetime) -> None:
+        self.__vtime = now
+
     def __sleep(self) -> None:
         if self.is_dryrun():
             return
