@@ -13,8 +13,8 @@ class Scale:
         note = Note(self.root, octave).transpose(self.scale[degree])
         return note
 
-    def bind(self, degrees: list[int], octave: int = 0) -> list[int]:
-        ret = []
+    def bind(self, degrees: list, octave: int = 0) -> list:
+        ret: list = []
         for degree in degrees:
             if degree is None:
                 # rest note
@@ -26,3 +26,6 @@ class Scale:
                 # chord
                 ret.append(self.bind(degrees=degree, octave=octave))
         return ret
+
+    def degrees(self) -> list[int]:
+        return sorted([(x + self.root) % 12 for x in self.scale])

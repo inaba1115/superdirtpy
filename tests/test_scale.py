@@ -18,3 +18,7 @@ class TestScale(unittest.TestCase):
         self.assertEqual(
             scale.bind(degrees=degrees, octave=5), [[60, 63, 65], [63, 65, 67]]
         )
+
+    def test_degrees(self):
+        scale = Scale(PitchClass.A, Scales.min_pent)
+        self.assertEqual(scale.degrees(), [0, 2, 4, 7, 9])
