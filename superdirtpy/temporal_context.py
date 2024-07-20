@@ -1,3 +1,6 @@
+from __future__ import annotations
+
+import copy
 import time
 from datetime import datetime, timedelta
 
@@ -35,3 +38,6 @@ class TemporalContext:
 
     def is_dryrun(self) -> bool:
         return self.__dryrun
+
+    def clone(self) -> TemporalContext:
+        return copy.deepcopy(self)

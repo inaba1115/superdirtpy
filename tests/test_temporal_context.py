@@ -24,3 +24,9 @@ class TestTemporalContext(unittest.TestCase):
         self.assertEqual(tctx.elapsed_time(), timedelta(seconds=0.3))
         tctx.sleep_until(now + timedelta(seconds=0.6))
         self.assertEqual(tctx.elapsed_time(), timedelta(seconds=0.6))
+
+    def test_clone(self):
+        tctx1 = TemporalContext()
+        tctx2 = tctx1.clone()
+        self.assertNotEqual(tctx1, tctx2)
+        self.assertEqual(tctx1.now(), tctx2.now())
