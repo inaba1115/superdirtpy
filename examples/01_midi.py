@@ -6,8 +6,7 @@ import superdirtpy as sd
 
 rng = np.random.default_rng()
 client = sd.SuperDirtClient()
-s = "mydevice"
-midichan = 0
+p = {"s": "mydevice", "midichan": 0}
 
 
 def main():
@@ -17,9 +16,7 @@ def main():
         n = rng.integers(1, 5, endpoint=True)
         chord = rng.choice(10, n, replace=False).tolist()
         chord = scale.bind(degrees=chord)
-        params = {
-            "s": s,
-            "midichan": midichan,
+        params = p | {
             "n": [chord],
             "amp": rng.uniform(0.4, 0.9),
             "delta": rng.uniform(0.8, 2.0),
