@@ -26,3 +26,6 @@ class Scale:
                 # chord
                 ret.append(self.bind(degrees=degree, octave=octave))
         return ret
+
+    def degrees(self) -> list[int]:
+        return sorted([(x + self.root) % 12 for x in self.scale])
