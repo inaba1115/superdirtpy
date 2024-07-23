@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import random
 from enum import IntEnum
 
 
@@ -17,13 +16,6 @@ class PitchClass(IntEnum):
     A = 9
     As = 10
     B = 11
-
-    @classmethod
-    def random(cls) -> tuple[str, PitchClass]:
-        pitch_classes = []
-        for k, v in cls.__members__.items():
-            pitch_classes.append((k, v))
-        return random.choice(pitch_classes)
 
 
 class Note:
