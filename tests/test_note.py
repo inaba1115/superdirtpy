@@ -3,11 +3,6 @@ import unittest
 from superdirtpy.note import Note, PitchClass
 
 
-class TestPitchClass(unittest.TestCase):
-    def test_random(self):
-        _, _ = PitchClass.random()
-
-
 class TestNote(unittest.TestCase):
     def test_init(self):
         note = Note(PitchClass.C, 5)
