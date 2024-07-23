@@ -13,6 +13,3 @@ https://tidalcycles.org/
 ## examples
 - [examples](./examples/)
 - https://github.com/inaba1115/algorithmic-composition-playground
-
-## parameters
-This library internally handles only `s`, `sound`, `n`, and `delta`, but you can also use parameters such as `amp` and `room`. ([source](./superdirtpy/params.py))
