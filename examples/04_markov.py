@@ -35,6 +35,7 @@ class Markov:
 
 def main():
     tctx = sd.TemporalContext()
+
     xs = ["bd", "sn", "hc", "ho", "can", None]
     matrix = [
         [1, 1, 0, 1, 0, 0],
@@ -45,6 +46,7 @@ def main():
         [1, 0, 1, 0, 0, 1],
     ]
     m = Markov(xs, matrix)
+
     while True:
         params = {
             "s": m.gen(11),
