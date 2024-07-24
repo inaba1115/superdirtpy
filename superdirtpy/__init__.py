@@ -1,4 +1,5 @@
 from .chords import Chords
+from .euclid import euclid
 from .note import Note, PitchClass
 from .pattern import Pattern
 from .scale import Scale
@@ -9,6 +10,7 @@ from .utils import zmap
 
 __all__ = [
     "Chords",
+    "euclid",
     "Note",
     "PitchClass",
     "Pattern",
