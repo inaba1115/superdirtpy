@@ -41,8 +41,25 @@ class TestEuclid(unittest.TestCase):
         with self.assertRaises(ValueError):
             euclid(0, 0)
 
-        self.assertEqual(euclid(0, 1), ".")
-        self.assertEqual(euclid(1, 1), "x")
+        with self.assertRaises(ValueError):
+            euclid(0, 1)
+
+        with self.assertRaises(ValueError):
+            euclid(0, 2)
+
+        with self.assertRaises(ValueError):
+            euclid(1, 0)
+
+        with self.assertRaises(ValueError):
+            euclid(1, 1)
+
+        self.assertEqual(euclid(1, 2), "x.")
+
+        with self.assertRaises(ValueError):
+            euclid(2, 0)
 
         with self.assertRaises(ValueError):
             euclid(2, 1)
+
+        with self.assertRaises(ValueError):
+            euclid(2, 2)
