@@ -1,8 +1,8 @@
 def euclid(k: int, n: int, r: int = 0) -> str:
-    if n < 1:
-        raise ValueError(f"n must be a positive value: n={n}")
-    if k > n:
-        raise ValueError(f"k must be smaller than or equal to n: k={k}, n={n}")
+    if not n >= 2:
+        raise ValueError(f"n must be greater than 2: n={n}")
+    if not 0 < k < n:
+        raise ValueError(f"k must be 0 < k < n: k={k}, n={n}")
 
     xss, yss = [["x"] for _ in range(k)], [["."] for _ in range(n - k)]
     xss, yss = _euclid(xss, yss)
