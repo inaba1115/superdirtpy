@@ -1,4 +1,3 @@
-import logging
 import typing
 
 import numpy as np
@@ -47,19 +46,13 @@ def main():
     ]
     m = Markov(xs, matrix)
 
-    while True:
+    for _ in range(8):
         params = {
-            "s": m.gen(11),
-            "delta": 0.086,
-            "amp": 0.8,
-            "distort": 0.65,
+            "s": m.gen(16),
+            "delta": 0.2,
         }
         sd.Pattern(client=client, params=params).play(tctx)
 
 
 if __name__ == "__main__":
-    try:
-        logging.basicConfig(level=logging.DEBUG)
-        main()
-    except KeyboardInterrupt:
-        pass
+    main()

@@ -57,8 +57,8 @@ def bpm_to_sec_per_cycle(bpm: float) -> float:
     return 60 / bpm * 4
 
 
-bpm = 180
-pattern_global = "bd [bd sn] ho [bd sn]"
+bpm = 120
+pattern_global = "bd bd [sn sn] [sn sn [sn sn]]"
 lock = Lock()
 
 
@@ -86,10 +86,6 @@ def player():
             params = {
                 "s": sound,
                 "delta": delta,
-                "shape": 0.8,
-                "coarse": 16,
-                "room": 0.6,
-                "size": 0.6,
             }
             sd.Pattern(client=client, params=params).play(tctx)
 
