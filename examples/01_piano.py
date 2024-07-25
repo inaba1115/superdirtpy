@@ -1,12 +1,11 @@
-import logging
-
 import numpy as np
 
 import superdirtpy as sd
 
 rng = np.random.default_rng()
 client = sd.SuperDirtClient()
-p = {"s": "mydevice", "midichan": 0}
+p = {"s": "mydevice", "midichan": 0}  # midi
+# p = {"s": "superpiano"}
 
 
 def main():
@@ -27,8 +26,4 @@ def main():
 
 
 if __name__ == "__main__":
-    try:
-        logging.basicConfig(level=logging.DEBUG)
-        main()
-    except KeyboardInterrupt:
-        pass
+    main()
