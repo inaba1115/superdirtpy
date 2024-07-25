@@ -5,7 +5,7 @@ from lark import Lark, Transformer, v_args
 
 import superdirtpy as sd
 
-pattern_grammer = r"""
+my_grammer = r"""
     pattern: unit+
 
     ?unit: list | note
@@ -21,7 +21,7 @@ pattern_grammer = r"""
 """
 
 
-class PatternTransformer(Transformer):
+class MyTransformer(Transformer):
     pattern = list
     list = list
 
@@ -34,7 +34,7 @@ class PatternTransformer(Transformer):
 
 
 pattern_parser = Lark(
-    pattern_grammer, parser="lalr", start="pattern", transformer=PatternTransformer()
+    my_grammer, parser="lalr", start="pattern", transformer=MyTransformer()
 )
 
 
@@ -53,17 +53,13 @@ def make_sound_delta(pattern: list, sec: float) -> tuple[list[str], list[float]]
     return ret_sound, ret_delta
 
 
-def bpm_to_sec_per_cycle(bpm: float) -> float:
-    return 60 / bpm * 4
-
-
 bpm = 120
 pattern_global = "bd bd [sn sn] [sn sn [sn sn]]"
 lock = Lock()
 
 
 def player():
-    sec_per_cycle = bpm_to_sec_per_cycle(bpm)
+    sec_per_cycle = round(60 / bpm * 4, 4)
     client = sd.SuperDirtClient()
     tctx = sd.TemporalContext()
     pattern_cache = ""
