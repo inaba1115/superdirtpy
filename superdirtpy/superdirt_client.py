@@ -1,7 +1,8 @@
 import logging
-from datetime import datetime
 
 from pythonosc import osc_bundle_builder, osc_message_builder, udp_client
+
+from .temporal_context import TemporalContext
 
 logger = logging.getLogger(__name__)
 
@@ -29,12 +30,12 @@ class SuperDirtClient:
         self.__client = OscClient(address, port)
         self.__delay = delay
 
-    def send(self, event: dict, timestamp: datetime, dryrun: bool = False) -> None:
-        if dryrun:
+    def send(self, tctx: TemporalContext, event: dict) -> None:
+        if tctx.is_dryrun():
             return
         logger.debug(event)
         self.__client.send(
             address=self.ADDRESS,
             args=event,
-            timestamp=timestamp.timestamp() + self.__delay,
+            timestamp=tctx.now().timestamp() + self.__delay,
         )
