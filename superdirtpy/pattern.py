@@ -46,7 +46,7 @@ class Pattern:
     def play(self, tctx: TemporalContext) -> None:
         for delta, events in self.events_list:
             for event in events:
-                self.client.send(event, tctx.now(), tctx.is_dryrun())
+                self.client.send(tctx, event)
             tctx.sleep(delta)
 
 
