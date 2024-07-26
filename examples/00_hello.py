@@ -8,8 +8,8 @@ def main():
 
     for _ in range(8):
         params = {
-            "s": ["bd", None],
-            "delta": 0.2,
+            "sound": ["bd", "sn:1"],
+            "delta": 0.5,
         }
         sd.Pattern(client=client, params=params).play(tctx)
 

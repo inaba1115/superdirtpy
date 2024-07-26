@@ -4,8 +4,8 @@ import superdirtpy as sd
 
 rng = np.random.default_rng()
 client = sd.SuperDirtClient()
-p = {"s": "mydevice", "midichan": 0}  # midi
-# p = {"s": "superpiano"}
+p = {"s": "superpiano"}
+# p = {"s": "mydevice", "midichan": 0}
 
 
 def main():

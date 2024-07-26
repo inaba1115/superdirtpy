@@ -35,14 +35,12 @@ class Markov:
 def main():
     tctx = sd.TemporalContext()
 
-    xs = ["bd", "sn", "hc", "ho", "can", None]
+    xs = ["bd", "sn", "hc", "ho"]
     matrix = [
-        [1, 1, 0, 1, 0, 0],
-        [1, 0, 1, 0, 0, 1],
-        [0, 0, 0, 1, 1, 1],
-        [0, 1, 0, 1, 0, 1],
-        [1, 0, 1, 1, 0, 0],
-        [1, 0, 1, 0, 0, 1],
+        [1, 1, 0, 1],
+        [1, 0, 1, 0],
+        [1, 0, 0, 1],
+        [0, 1, 0, 1],
     ]
     m = Markov(xs, matrix)
 
