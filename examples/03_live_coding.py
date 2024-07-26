@@ -38,19 +38,19 @@ pattern_parser = Lark(
 )
 
 
-def make_sound_delta(pattern: list, sec: float) -> tuple[list[str], list[float]]:
-    ret_sound = []
-    ret_delta = []
-    unit_delta = sec / len(pattern)
-    for unit in pattern:
-        if isinstance(unit, list):
-            sound, delta = make_sound_delta(unit, unit_delta)
-            ret_sound.extend(sound)
-            ret_delta.extend(delta)
+def make_params(pattern: list, sec: float) -> tuple[list[str], list[float]]:
+    s = []
+    delta = []
+    dt = sec / len(pattern)
+    for p in pattern:
+        if isinstance(p, list):
+            _s, _delta = make_params(p, dt)
+            s.extend(_s)
+            delta.extend(_delta)
         else:
-            ret_sound.append(unit)
-            ret_delta.append(unit_delta)
-    return ret_sound, ret_delta
+            s.append(p)
+            delta.append(dt)
+    return s, delta
 
 
 bpm = 120
@@ -76,11 +76,11 @@ def player():
         if pattern_cache != "":
             if pattern_updated:
                 pattern = pattern_parser.parse(pattern_cache)
-                sound, delta = make_sound_delta(pattern, sec_per_cycle)  # type: ignore
+                s, delta = make_params(pattern, sec_per_cycle)  # type: ignore
                 pattern_updated = False
 
             params = {
-                "s": sound,
+                "s": s,
                 "delta": delta,
             }
             sd.Pattern(client=client, params=params).play(tctx)
