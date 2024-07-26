@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "superdirtpy"
 version = "0.11.0"
-description = "superdirtpy is a client library for Super Dirt written in python."
+description = "superdirtpy is a python library for algorithmic composition working with SuperDirt."
 authors = ["inaba1115 <inaba1115@gmail.com>"]
 readme = "README.md"
 homepage = "https://github.com/inaba1115"

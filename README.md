@@ -1,15 +1,12 @@
 # superdirtpy
-superdirtpy is a client library for Super Dirt written in python.
-
-## features
-- timing control
-- no framework or DSL
-- can be used for algorithmic composition, live coding, integration with python libraries such as numpy and scipy and developing tools for your own use.
+superdirtpy is a python library for algorithmic composition working with [SuperDirt](https://github.com/musikinformatik/SuperDirt).
 
 ## prerequisite
-Install Tidal Cycles. Especially Super Dirt.  
-https://tidalcycles.org/
+Install TidalCycles/SuperDirt.
 
 ## examples
 - [examples](./examples/)
 - https://github.com/inaba1115/algorithmic-composition-playground
+
+## plugins
+- https://github.com/inaba1115/batch-midi
