@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "superdirtpy"
-version = "0.12.2"
+version = "0.12.3"
 description = "superdirtpy is a python library for algorithmic composition working with SuperDirt."
 authors = ["inaba1115 <inaba1115@gmail.com>"]
 readme = "README.md"
@@ -18,7 +18,7 @@ flake8 = "^7.0.0"
 mypy = "^1.10.0"
 
 [tool.poetry.group.examples.dependencies]
-numpy = "^1.26.4"
+numpy = "^2.1.0"
 
 [build-system]
 requires = ["poetry-core"]
