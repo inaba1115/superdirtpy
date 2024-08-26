@@ -56,5 +56,5 @@ class Note:
     @classmethod
     def __from_midi_number(cls, midi_number: int) -> tuple[PitchClass, int]:
         pc = PitchClass(midi_number % 12)
-        octave = int(midi_number / 12)
+        octave = midi_number // 12
         return pc, octave
