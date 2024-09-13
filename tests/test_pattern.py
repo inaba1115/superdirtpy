@@ -14,6 +14,12 @@ class TestEvent(unittest.TestCase):
         params = {"s": None, "delta": 1}
         self.assertEqual(Event.make_events(params), [])
 
+        params = {"sound": None, "delta": 1}
+        self.assertEqual(Event.make_events(params), [])
+
+        params = {"s": "piano", "n": None, "delta": 1}
+        self.assertEqual(Event.make_events(params), [])
+
     def test_make_events_single_note(self):
         params = {"s": "bd", "delta": 1}
         self.assertEqual(Event.make_events(params), [{"s": "bd", "delta": 1}])

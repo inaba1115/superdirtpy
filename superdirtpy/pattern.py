@@ -62,14 +62,18 @@ class Event:
 
     @classmethod
     def make_events(cls, params: dict) -> list[dict]:
-        # rest note
         s = params.get(Params.s)
         sound = params.get(Params.sound)
+        has_n = Params.n in params
+        n = params.get(Params.n)
+
+        # rest note
         if s is None and sound is None:
+            return []
+        if (s is not None or sound is not None) and (has_n and n is None):
             return []
 
         # chord
-        n = params.get(Params.n)
         chord = []
         if n is not None and isinstance(n, list):
             for note in params[Params.n]:
