@@ -19,3 +19,12 @@ class TestUtils(unittest.TestCase):
         )
         self.assertEqual(bind_method([0, 1, 2], [0], {0: 0}), [0, 1, 2])
         self.assertEqual(bind_method([0, 1, 2], [0], {}), [None, None, None])
+
+        roots = [0, 1, 2, 3]
+        methods = [0, -1, 1, 0]
+        methods_map = {
+            0: 0,
+            1: [0, 2, 4],
+        }
+        degrees = bind_method(roots=roots, methods=methods, method_map=methods_map)
+        self.assertEqual(degrees, [0, None, [2, 4, 6], 3])
