@@ -9,7 +9,7 @@ def zmap(
 def bind_method(roots: list[int], methods: list[int], method_map: dict) -> list:
     ret: list = []
     for i in range(len(roots)):
-        method = method_map.get(i % len(methods))
+        method = method_map.get(methods[i % len(methods)])
         if method is None:
             ret.append(None)
         elif not isinstance(method, list):
