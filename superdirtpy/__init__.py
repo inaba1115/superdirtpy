@@ -6,7 +6,7 @@ from .scale import Scale
 from .scales import Scales
 from .superdirt_client import SuperDirtClient
 from .temporal_context import TemporalContext
-from .utils import zmap
+from .utils import bind_method, zmap
 
 __all__ = [
     "Chords",
@@ -19,4 +19,5 @@ __all__ = [
     "SuperDirtClient",
     "TemporalContext",
     "zmap",
+    "bind_method",
 ]
