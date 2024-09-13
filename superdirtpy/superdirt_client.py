@@ -1,6 +1,10 @@
 import logging
 
-from pythonosc import osc_bundle_builder, osc_message_builder, udp_client
+from pythonosc import (  # type: ignore
+    osc_bundle_builder,
+    osc_message_builder,
+    udp_client,
+)
 
 from .temporal_context import TemporalContext
 
