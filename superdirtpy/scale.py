@@ -7,7 +7,7 @@ class Scale:
         self.root = root
         self.scale = scale
 
-    def __map(self, degree: int, octave: int) -> Note:
+    def __bind(self, degree: int, octave: int) -> Note:
         octave += degree // len(self.scale)
         degree = degree % len(self.scale)
         note = Note(self.root, octave).transpose(self.scale[degree])
@@ -21,11 +21,11 @@ class Scale:
                 ret.append(None)
             elif not isinstance(degree, list):
                 # single note
-                ret.append(self.__map(degree=degree, octave=octave).midi_number)
+                ret.append(self.__bind(degree=degree, octave=octave).midi_number)
             else:
                 # chord
                 ret.append(self.bind(degrees=degree, octave=octave))
         return ret
 
-    def degrees(self) -> list[int]:
-        return sorted([(x + self.root) % 12 for x in self.scale])
+    def get_pitch_classes(self) -> list[PitchClass]:
+        return sorted([PitchClass((self.root + x) % 12) for x in self.scale])

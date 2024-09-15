@@ -25,6 +25,10 @@ class TestScale(unittest.TestCase):
             [-14, -12, -9, -7, -5, -2, 0, 3, 5, 7, 10, 12, 15],
         )
 
-    def test_degrees(self):
+    def test_get_pitch_classes(self):
         scale = Scale(PitchClass.A, Scales.min_pent)
-        self.assertEqual(scale.degrees(), [0, 2, 4, 7, 9])
+        self.assertEqual(
+            scale.get_pitch_classes(),
+            [PitchClass.C, PitchClass.D, PitchClass.E, PitchClass.G, PitchClass.A],
+        )
+        self.assertEqual(scale.get_pitch_classes(), [0, 2, 4, 7, 9])
